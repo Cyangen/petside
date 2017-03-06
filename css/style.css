@@ -716,13 +716,13 @@ a:hover, a:focus {
 @media (min-width: 480px) {
   .navbar-default .navbar-header .navbar-brand {
     padding: 0 15px;
-    margin-top: 10px;
+    /*margin-top: 10px;*/
   }
 }
 @media (min-width: 768px) {
   .navbar-default .navbar-header .navbar-brand {
     padding: 0 15px;
-    margin-top: 27px;
+    /*margin-top: 27px;*/
   }
 }
 .navbar-default .navbar-collapse {
