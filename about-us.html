@@ -143,10 +143,7 @@
       
       <!-- DARK SECTION -->
       <section class="clearfix">
-
-        <div id="map" style="width:100%;height:400px;"></div>
-
-        <!--<iframe class="actAsDiv" width="100%" height="337" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;q=Biotrade%20snc%20mirandola%20&amp;aq=0&amp;ie=UTF8&amp;t=h&amp;z=19&amp;iwloc=A&amp;output=embed"></iframe>-->
+        <div id="map" style="width:100%;height:337px;"></div>
 
         <script>
 
@@ -154,7 +151,8 @@
             var map = new google.maps.Map(document.getElementById('map'), {
               center: {lat: 44.899429, lng: 11.063122},
               zoom: 18,
-              scrollwheel: false
+              scrollwheel: false,
+              mapTypeId: 'hybrid'
             });
 
             var infowindow = new google.maps.InfoWindow();
@@ -176,6 +174,15 @@
                 });
               }
             });
+
+            // Append card when map renders
+            google.maps.event.addListener(map, 'idle', function(e) {
+
+              // Prevents card from being added more than once (i.e. when page is resized and google maps re-renders)
+              if ( $( ".place-card" ).length === 0 ) {
+                $(".gm-style").append('<div style="position: absolute; right: 0px; top: 0px;"> <div style="margin: 10px; padding: 1px; -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; border-radius: 2px; background-color: white;"> <div> <div class="place-card place-card-large"> <div class="place-desc-large"> <div class="place-name"> Biotrade Snc</div><div class="address"> Via Antonio Pacinotti, 21, 41037 Mirandola MO, Italy </div></div><div class="navigate"> <div class="navigate"> <a class="navigate-link" href="https://maps.google.com/maps?ll=44.899429,11.063122&amp;z=16&amp;t=m&amp;hl=en-US&amp;gl=PT&amp;mapclient=embed&amp;daddr=Biotrade%snc%20mirandola%2080078%20Italy@44.899429,11.063122" target="_blank"> <div class="icon navigate-icon"></div><div class="navigate-text"> Directions </div></a> </div></div><div class="review-box"> <div class="" style="display:none"></div><div class="" style="display:none"></div><div class="" style="display:none"></div><div class="" style="display:none"></div><div class="" style="display:none"></div><div class="" style="display:none"></div></div><div class="saved-from-source-link" style="display:none"> </div><div class="maps-links-box-exp"> <div class="time-to-location-info-exp" style="display:none"> <span class="drive-icon-exp experiment-icon"></span><a class="time-to-location-text-exp" style="display:none" target="_blank"></a><a class="time-to-location-text-exp" style="display:none" target="_blank"></a> </div><div class="google-maps-link">  </div></div><div class="time-to-location-privacy-exp" style="display:none"> <div class="only-visible-to-you-exp"> Visible only to you. </div><a class="learn-more-exp" target="_blank">Learn more</a> </div></div></div></div></div>');
+              }
+            });
           }
         </script>
 
@@ -184,6 +191,8 @@
         </script>
 
       </section>
+
+      <p style="margin-top: 60px"></p>
 
       <section class="darkSection clearfix">
             <div class="col-xs-12 text-center">

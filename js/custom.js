@@ -70,7 +70,7 @@ jQuery(document).ready(function() {
 		fullWidth: "on",
 		fullScreen: "off",
 		hideCaptionAtLimit: "",
-		dottedOverlay: "twoxtwo",
+		dottedOverlay: "o",
 		navigationStyle: "preview4",
 		fullScreenOffsetContainer: "",
 		hideTimerBar:"on",
