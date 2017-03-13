@@ -82,9 +82,6 @@
                         <li class="dropdown">
                             <a href="product-grid-4-col.html" role="button" aria-haspopup="true" aria-expanded="false">Prodotti</a>
                         </li>
-                        <li class="dropdown">
-                            <a href="javascript:void(0)" role="button" aria-haspopup="true" aria-expanded="false">Clienti</a>
-                        </li>
                         <li class="dropdown active">
                             <a href="contact-us.html" role="button" aria-haspopup="true" aria-expanded="false">Contattaci</a>
                         </li>
@@ -124,18 +121,18 @@
                     <div class="panel panel-default">
                         <div class="panel-heading"><h3>Contattaci</h3></div>
                         <div class="panel-body">
-                            <form action="" method="POST" role="form">
+                            <form name="contactform" action="send_form_email.php" method="POST" role="form">
                                 <div class="form-group">
-                                    <label for="">Nome</label>
-                                    <input type="text" class="form-control" id="">
+                                    <label for="name">Nome</label>
+                                    <input type="text" class="form-control" name="name" id="name">
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Email</label>
-                                    <input type="email" class="form-control" id="">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" name="email" id="email">
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Messaggio</label>
-                                    <textarea style="height: 200px" rows="60"  class="form-control" id=""></textarea>
+                                    <label for="msg">Messaggio</label>
+                                    <textarea style="height: 200px" rows="60" name="msg"  class="form-control" id="msg"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-block">Invia</button>
                             </form>
@@ -145,6 +142,29 @@
             </div>
         </div>
     </section>
+
+    <!--<section class="darkSection clearfix">-->
+        <!--<div class="container">-->
+            <!--<div class="row">-->
+                <!--<div class="col-xs-12 text-center">-->
+                    <!--<h3>Dove Siamo</h3>-->
+                <!--</div>-->
+                <!--<div class="col-md-3 col-sm-6 col-xs-12">-->
+                    <!--<div class="thumbnail">-->
+                        <!--<div class="caption">-->
+                            <!--<h5>Città</h5>-->
+                            <!--<address>-->
+                                <!--Krakovská 1307/22, 110 00 N,Y <br>-->
+                                <!--Vězeňská 910/2, 110 00 N,Y-Staré  <br>-->
+                                <!--Město Na Hřebenkách 2, 150 00  <br>-->
+                                <!--N,Y-->
+                            <!--</address>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</section>-->
 
     <!-- FOOTER -->
     <div class="footer clearfix">

@@ -2922,13 +2922,13 @@ body.bodyColor.container {
   width: 100%;
 }
 .instagramSection .image-gallery {
-  width: 33.33%;
+  width: 50%;
   display: inline-block;
   float: left;
 }
 @media (min-width: 768px) {
   .instagramSection .image-gallery {
-    width: 16.66%;
+    width: 25%;
   }
 }
 .instagramSection .image-gallery img {
