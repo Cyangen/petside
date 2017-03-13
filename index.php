@@ -1,6 +1,6 @@
 <?php
 
-include_once("index-v1.html");
+include_once("index.html");
 
 if(isset($_POST['email'])) {
 
