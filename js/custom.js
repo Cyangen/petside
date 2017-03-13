@@ -73,7 +73,7 @@ jQuery(document).ready(function() {
 		dottedOverlay: "o",
 		navigationStyle: "preview4",
 		fullScreenOffsetContainer: "",
-		hideTimerBar:"on",
+		hideTimerBar:"on"
 	});
 
 	jQuery('.bannerV4 .fullscreenbanner').revolution({
@@ -87,7 +87,7 @@ jQuery(document).ready(function() {
 		navigationStyle: "preview4",
 		fullScreenOffsetContainer: "",
 		hideTimerBar:"on",
-		onHoverStop:"on",
+		onHoverStop:"on"
 	});
 });
 
