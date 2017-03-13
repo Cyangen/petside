@@ -162,7 +162,8 @@
                     center: {lat: 44.899429, lng: 11.063122},
                     zoom: 18,
                     scrollwheel: false,
-                    mapTypeId: 'hybrid'
+                    mapTypeId: 'hybrid',
+                    disableDefaultUI: true
                 });
 
                 var infowindow = new google.maps.InfoWindow();
@@ -176,11 +177,6 @@
                             map: map,
                             position: place.geometry.location,
                             zIndex: 999
-                        });
-                        google.maps.event.addListener(marker, 'click', function() {
-                            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-                            place.formatted_address + '</div>');
-                            infowindow.open(map, this);
                         });
                     }
                 });
