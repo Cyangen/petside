@@ -1,71 +1,19 @@
 <?php
+if(isset($_POST['submit'])){
+    $to = "matteoratti90@gmail.com"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $name = $_POST['name'];
+    $msn = $_POST['msg'];
+    $subject = "Form submission";
+    $message = $name . " wrote the following:" . "\n\n" . $msn;
 
-if(isset($_POST['email'])) {
-
-// EDIT THE 2 LINES BELOW AS REQUIRED
-
-    $email_to = "matteoratti90@gmail.com";
-
-    $email_subject = "Your email subject line";
-
-    function died($error) {
-
-        // your error code can go here
-
-        echo "We are very sorry, but there were error(s) found with the form you submitted. ";
-
-        echo "These errors appear below.<br /><br />";
-
-        echo $error."<br /><br />";
-
-        echo "Please go back and fix these errors.<br /><br />";
-
-        die();
-
-    }
-
-
-
-// validation expected data exists
-
-    if(!isset($_POST['name']) ||
-
-        !isset($_POST['email']) ||
-
-        !isset($_POST['msg'])) {
-
-        died('We are sorry, but there appears to be a problem with the form you submitted.');
-
-    }
-
-
-
-    $first_name = $_POST['name']; // required
-
-    $email_from = $_POST['email']; // required
-
-    $comments = $_POST['msg']; // required
-
-    $error_message = "";
-
-
-    function clean_string($string) {
-
-        $bad = array("content-type","bcc:","to:","cc:","href");
-
-        return str_replace($bad,"",$string);
-
-    }
-
-
-// create email headers
-
-    $headers = 'From: '.$email_from."\r\n".
-
-        'Reply-To: '.$email_from."\r\n" .
-
-        'X-Mailer: PHP/' . phpversion();
-
-    @mail($email_to, $email_subject, $email_message, $headers);
-
+    $headers = "From:" . $from;
+    if(mail($to,$subject,$message,$headers)){
+        mail($to,$subject,$message,$headers);
+        header('location:contact_success.html');
+    };
+    echo "Mail Sent. Thank you " . $name . ", we will contact you shortly.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    // You cannot use header and echo together. It's one or the other.
 }
+?>
